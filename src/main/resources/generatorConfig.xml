@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 绝对路径 -->
+    <!--<classPathEntry location="/Users/mr_0928/.m2/repository/mysql/mysql-connector-java/5.1.15/mysql-connector-java-5.1.15.jar" />-->
+    <classPathEntry location="deploy/lib/mysql-connector-java-5.1.46.jar" />
+    <context id="DB2Tables"    targetRuntime="MyBatis3" defaultModelType="flat">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/wj"
+                        userId="root" password="password">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.qlx.domain.pojo" targetProject="/Users/yangning/shop-server/qlx-interface-api/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="com.qlx.mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!--生成Dao类存放位置-->
+        <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码
+                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
+                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
+                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
+        -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.qlx.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--生成对应表及类名-->
+        <!--table tableName="parking_car_space" domainObjectName="CarSpace"></table>-->
+        <!--<table tableName="parking_ths_deposit_user" domainObjectName="ThsDepositUser"></table>-->
+        <!--<table tableName="parking_coupon_detail" domainObjectName="CouponDetail"></table>-->
+        <!--<table tableName="parking_coupon" domainObjectName="Coupon"></table>-->
+        <!--<table tableName="parking_ths_invoice_record" domainObjectName="ThsInvoiceRecord"></table>-->
+        <!--<table tableName="parking_payment_order" domainObjectName="PaymentOrder"></table>-->
+        <!--<table tableName="parking_ths_order_record_refund" domainObjectName="ThsOrderRecordRefund"></table>-->
+        <!--<table tableName="parking_ths_customer_feedback" domainObjectName="ThsCustomerFeedback"></table>-->
+        <!--<table tableName="parking_business_account" domainObjectName="BusinessAccount"></table>-->
+        <!--<table tableName="parking_user_rel_role_key" domainObjectName="UserRelRoleKey"></table>-->
+        <!--<table tableName="parking_authority" domainObjectName="Authority"></table>-->
+        <!--<table tableName="parking_ths_member" domainObjectName="ThsMember"></table>-->
+        <!--<table tableName="parking_ths_member_type" domainObjectName="ThsMemberType"></table>-->
+        <!--<table tableName="parking_ths_member_type_card" domainObjectName="ThsMemberTypeCard"></table>-->
+        <!--<table tableName="parking_ths_market_active" domainObjectName="ThsMarketActive"></table>-->
+        <!--<table tableName="parking_ths_market_active_item" domainObjectName="ThsMarketActiveItem"></table>-->
+        <!--<table tableName="parking_ths_market_biz" domainObjectName="ThsMarketBiz"></table>-->
+        <!--<table tableName="parking_ths_order_record" domainObjectName="ThsOrderRecord"></table>-->
+        <!--<table tableName="parking_ths_car_record" domainObjectName="ThsCarRecord"></table>-->
+        <!--<table tableName="parking_order" domainObjectName="Order"></table>-->
+        <!--<table tableName="parking_car_user" domainObjectName="CarUser"></table>-->
+        <!--<table tableName="parking_ths_mini_user" domainObjectName="ThsMiniUser"></table>-->
+        <!--<table tableName="parking_charging_rules" domainObjectName="ChargingRules"></table>-->
+        <!--<table tableName="parking_ths_market_active" domainObjectName="ThsMarketActive"></table>-->
+        <table tableName="user" domainObjectName="User"></table>
+
+        <!--keyProperty="id" useGeneratedKeys="true"-->
+
+
+    </context>
+</generatorConfiguration>
